@@ -1,29 +1,28 @@
 {
-  "name": "tolkien-gateway",
-  "version": "1.0.0",
-  "description": "Experiment with Tolkien Gateway",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nazmul-nhb/tolkien-gateway-experiment.git"
-  },
-  "keywords": [
-    "tolkien",
-    "one-ring"
-  ],
-  "author": {
-    "name": "Nazmul Hassan"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nazmul-nhb/tolkien-gateway-experiment/issues"
-  },
-  "homepage": "https://github.com/nazmul-nhb/tolkien-gateway-experiment#readme",
-  "dependencies": {
-    "axios": "^1.7.7",
-    "cheerio": "^1.0.0"
-  }
+	"name": "tolkien-gateway",
+	"version": "1.0.0",
+	"description": "Experiment with Tolkien Gateway",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nazmul-nhb/tolkien-gateway-experiment.git"
+	},
+	"keywords": [
+		"tolkien",
+		"gateway",
+		"one-ring",
+		"wiki"
+	],
+	"author": {
+		"name": "Nazmul Hassan",
+		"email": "nazmulnhb@gmail.com"
+	},
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nazmul-nhb/tolkien-gateway-experiment/issues"
+	},
+	"homepage": "https://github.com/nazmul-nhb/tolkien-gateway-experiment#readme"
 }

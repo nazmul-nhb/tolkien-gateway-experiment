@@ -2,9 +2,9 @@
 	"name": "tolkien-gateway",
 	"version": "1.0.0",
 	"description": "Experiment with Tolkien Gateway",
-	"main": "index.js",
+	"main": "index.mjs",
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.mjs"
 	},
 	"repository": {
 		"type": "git",
@@ -24,5 +24,8 @@
 	"bugs": {
 		"url": "https://github.com/nazmul-nhb/tolkien-gateway-experiment/issues"
 	},
-	"homepage": "https://github.com/nazmul-nhb/tolkien-gateway-experiment#readme"
+	"homepage": "https://github.com/nazmul-nhb/tolkien-gateway-experiment#readme",
+	"dependencies": {
+		"puppeteer": "^23.6.0"
+	}
 }

@@ -20,12 +20,14 @@
 		"name": "Nazmul Hassan",
 		"email": "nazmulnhb@gmail.com"
 	},
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/nazmul-nhb/tolkien-gateway-experiment/issues"
 	},
 	"homepage": "https://github.com/nazmul-nhb/tolkien-gateway-experiment#readme",
 	"dependencies": {
-		"puppeteer": "^23.6.0"
+		"puppeteer": "^23.6.0",
+		"puppeteer-extra": "^3.3.6",
+		"puppeteer-extra-plugin-stealth": "^2.11.2"
 	}
 }

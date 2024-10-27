@@ -1,12 +1,11 @@
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import puppeteer from 'puppeteer-extra';
-import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
 puppeteer.use(StealthPlugin());
 
-// Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -46,6 +45,13 @@ async function saveData() {
             await pageInstance.goto(pageUrl, { waitUntil: 'networkidle2' });
             await pageInstance.waitForSelector('.mw-parser-output', { timeout: 30000 });
 
+            // Extract the title from the h1 element
+            const title = await pageInstance.evaluate(() => {
+                const titleElement = document.querySelector('.mw-page-title-main');
+                return titleElement ? titleElement.innerText.trim() : 'Unknown Title';
+            });
+
+            // Scrape the main content
             const content = await pageInstance.evaluate(() => {
                 const sections = document.querySelectorAll('section.citizen-section');
                 const headings = document.querySelectorAll('h2.citizen-section-heading');
@@ -71,7 +77,11 @@ async function saveData() {
                 return results;
             });
 
-            fs.writeFileSync(pageFileName, JSON.stringify(content, null, 2));
+            // Add the title at the beginning of the JSON data
+            const pageData = { title, content };
+
+            // Save the JSON data with the title
+            fs.writeFileSync(pageFileName, JSON.stringify(pageData, null, 2));
             console.log(`Saved: ${pageFileName}`);
         } catch (error) {
             console.error(`Error scraping ${page}:`, error?.message);
